@@ -19,5 +19,10 @@
 使用JPA技术实现动态查询   extends JpaRepository<Blog,Long>, JpaSpecificationExecutor<Blog>
  @Query("select b from Blog b where b.recommend = true")
     List<Blog> findTop(Pageable pageable);
+ 
+ 
+ handler自定义异常类
+ 
+ intercptor登录拦截器，用户未登录不可访问其他界面
 
 
