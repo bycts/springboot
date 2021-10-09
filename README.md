@@ -16,7 +16,7 @@
 日志处理通过切面实现(Aspect文件夹）
 页面处理通过thymeleaf布局实现 （公共片段通过fragment实现）
 
-使用JPA技术 JPA中自己分装好了一些方法可直接定义使用  @Query也是JPA中的。
+使用JPA框架 JPA中自己分装好了一些方法可直接定义使用  @Query也是JPA中的。
 
 extends JpaRepository<Blog,Long>, JpaSpecificationExecutor<Blog>
  @Query("select b from Blog b where b.recommend = true")
