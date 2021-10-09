@@ -13,3 +13,11 @@
 
 前端还使用了小插件集成，使其页面更加美观（MakeDown编辑器，内容排版typo.css,动画animate·.css,代码高亮prism,平滑滚动jqury.scrollTo,目录生成Tobot,二维码生成qrcode.js）
 
+日志处理通过切面实现(Aspect文件夹）
+页面处理通过thymeleaf布局实现 （公共片段通过fragment实现）
+
+使用JPA技术实现动态查询   extends JpaRepository<Blog,Long>, JpaSpecificationExecutor<Blog>
+ @Query("select b from Blog b where b.recommend = true")
+    List<Blog> findTop(Pageable pageable);
+
+
