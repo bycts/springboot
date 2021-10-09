@@ -11,3 +11,5 @@
  后台维护： 后台主要是管理员登录后对博客进行增删改也就是博客管理，还有分类管理和标签管理
 涉及的知识点：springboot, Maven , semantic ui
 
+前端还使用了小插件集成，使其页面更加美观（MakeDown编辑器，内容排版typo.css,动画animate·.css,代码高亮prism,平滑滚动jqury.scrollTo,目录生成Tobot,二维码生成qrcode.js）
+
