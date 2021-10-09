@@ -16,7 +16,9 @@
 日志处理通过切面实现(Aspect文件夹）
 页面处理通过thymeleaf布局实现 （公共片段通过fragment实现）
 
-使用JPA技术实现动态查询   extends JpaRepository<Blog,Long>, JpaSpecificationExecutor<Blog>
+使用JPA技术 JPA中自己分装好了一些方法可直接定义使用  @Query也是JPA中的。
+
+extends JpaRepository<Blog,Long>, JpaSpecificationExecutor<Blog>
  @Query("select b from Blog b where b.recommend = true")
     List<Blog> findTop(Pageable pageable);
  
@@ -24,5 +26,10 @@
  handler自定义异常类
  
  intercptor登录拦截器，用户未登录不可访问其他界面
-
+ 
+ 评论功能简介：
+ 父子级循环嵌套实现：
+ 1.是在一个具体博客下进行评论
+ 2，html中进行form表单验证  定一个在评论处fragment来动态刷新（局部）
+ 3.发布功能
 
