@@ -33,7 +33,37 @@ extends JpaRepository<Blog,Long>, JpaSpecificationExecutor<Blog>
  2，html中进行form表单验证  定一个在评论处fragment来动态刷新（局部）
  3.发布功能
  4.实现嵌套循环
- @Transactional
+ 
+ 
+ 
+ 
+ 
+ package com.example.byc.blog.service;
+
+
+import com.example.byc.blog.dao.CommentRepository;
+import com.example.byc.blog.po.Comment;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * Created by limi on 2017/10/22.
+ */
+@Service
+public class CommentServiceImpl implements CommentService {
+
+    @Autowired
+    private CommentRepository commentRepository;
+
+
+    @Transactional
     @Override
     public Comment saveComment(Comment comment) {
         Long parentCommentId = comment.getParentComment().getId();
@@ -118,4 +148,5 @@ extends JpaRepository<Blog,Long>, JpaSpecificationExecutor<Blog>
             }
         }
     }
+}
 
